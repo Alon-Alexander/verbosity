@@ -1,0 +1,13 @@
+Package: verbosity
+Title: Utilities for Logging and Verbosity
+Version: 0.1.0
+Authors@R: person("Alon", "Alexander", email = "alon008@gmail.com", role = c("aut", "cre"))
+Description: Provides utilities for logging and verbosity.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: en-US
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
