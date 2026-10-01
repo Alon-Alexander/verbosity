@@ -14,9 +14,9 @@
 #' @export
 log_time <- function(label, expr) {
   start <- Sys.time()
-  message(sprintf("[%s] start", label))
+  cat(sprintf("[%s] start\n", label))
   result <- eval.parent(substitute(expr))
   elapsed <- as.numeric(difftime(Sys.time(), start, units = "secs"))
-  message(sprintf("[%s] done in %.2fs", label, elapsed))
+  cat(sprintf("[%s] done in %.2fs\n", label, elapsed))
   invisible(result)
 }

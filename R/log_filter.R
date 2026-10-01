@@ -82,7 +82,7 @@ log_filter <- function(label, variable, expr) {
 
   header <- sprintf('Filter of "%s" finished and took %.2fs', label, elapsed)
   body <- paste0("    ", details, collapse = "\n")
-  message(paste(header, body, sep = "\n"))
+  cat(paste(header, body, sep = "\n"), "\n", sep = "")
 
   invisible(result)
 }
