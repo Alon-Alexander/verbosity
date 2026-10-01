@@ -84,5 +84,5 @@ log_filter <- function(label, variable, expr) {
   body <- paste0("    ", details, collapse = "\n")
   message(paste(header, body, sep = "\n"))
 
-  result
+  invisible(result)
 }
