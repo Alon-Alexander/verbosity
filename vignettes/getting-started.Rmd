@@ -1,0 +1,61 @@
+---
+title: "Getting Started with verbosity"
+author: "Alon Alexander"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with verbosity}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = TRUE
+)
+library(verbosity)
+```
+
+## Overview
+
+`verbosity` prints structured progress while a script runs:
+
+- `title()` — a centered section header
+- `log_time()` — elapsed time for an expression
+- `log_filter()` — row, column, or length changes on a data frame or vector
+
+## Example
+
+```{r example}
+title("Subset mtcars example")
+
+log_time("load data", {
+    cars <- mtcars
+})
+
+log_filter("mpg above 20", cars, {
+  cars <- cars[cars$mpg > 20, ]
+})
+
+head(cars)
+```
+
+Note: `log_filter()` compares the size of the given variable (before filter) and the result of the expression (after filter).
+
+## Using returned values
+
+`log_time()` and `log_filter()` return the value of the expression. This can be used to store the result in a variable:
+
+```{r returned-values}
+option1 <- log_time("load data", {
+  mtcars
+})
+
+log_time("load data", {
+  option2 <- mtcars
+})
+
+identical(option1, option2)
+```

@@ -2,7 +2,10 @@
 ^\.Rproj\.user$
 ^\.git$
 ^\.gitignore$
+^\.github$
 ^\.cursor$
-^LICENSE\.md$
 ^Makefile$
 ^.Rprofile.session$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

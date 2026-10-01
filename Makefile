@@ -1,4 +1,4 @@
-.PHONY: test document cmdcheck r
+.PHONY: test document pkgdown cmdcheck r
 
 test:
 	Rscript -e "devtools::test()"
@@ -6,8 +6,11 @@ test:
 document:
 	Rscript -e "devtools::document()"
 
+pkgdown:
+	Rscript -e "pkgdown::build_site()"
+
 cmdcheck:
-	Rscript -e "rcmdcheck::rcmdcheck()"
+	Rscript -e "rcmdcheck::rcmdcheck(args = c('--no-manual', '--compact-vignettes=gs+qpdf'), error_on = 'warning')"
 
 r:
 	@echo 'devtools::load_all()' > .Rprofile.session
