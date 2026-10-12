@@ -1,3 +1,10 @@
+# verbosity 0.1.1
+
+## New Features
+
+- Add `section()` for running a labeled block with indented output and elapsed time
+
+
 # verbosity 0.1.0
 
 ## New Features

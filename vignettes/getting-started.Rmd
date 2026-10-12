@@ -23,6 +23,7 @@ library(verbosity)
 `verbosity` prints structured progress while a script runs:
 
 - `title()` — a centered section header
+- `section()` — a timed block whose printed output is indented
 - `log_time()` — elapsed time for an expression
 - `log_filter()` — row, column, or length changes on a data frame or vector
 
@@ -31,22 +32,24 @@ library(verbosity)
 ```{r example}
 title("Subset mtcars example")
 
-log_time("load data", {
+section("subset cars", {
+  log_time("load data", {
     cars <- mtcars
-})
+  })
 
-log_filter("mpg above 20", cars, {
-  cars <- cars[cars$mpg > 20, ]
-})
+  log_filter("mpg above 20", cars, {
+    cars <- cars[cars$mpg > 20, ]
+  })
 
-head(cars)
+  head(cars)
+})
 ```
 
 Note: `log_filter()` compares the size of the given variable (before filter) and the result of the expression (after filter).
 
 ## Using returned values
 
-`log_time()` and `log_filter()` return the value of the expression. This can be used to store the result in a variable:
+`log_time()`, `log_filter()`, and `section()` return the value of the expression. This can be used to store the result in a variable:
 
 ```{r returned-values}
 option1 <- log_time("load data", {
