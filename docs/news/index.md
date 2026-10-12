@@ -8,6 +8,9 @@
   [`title()`](https://alon-alexander.github.io/verbosity/reference/title.md)
   for printing a centered section header
 - Add
+  [`section()`](https://alon-alexander.github.io/verbosity/reference/section.md)
+  for running a labeled block with indented output and elapsed time
+- Add
   [`log_time()`](https://alon-alexander.github.io/verbosity/reference/log_time.md)
   for timing an expression and printing elapsed seconds
 - Add

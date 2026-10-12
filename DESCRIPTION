@@ -1,6 +1,6 @@
 Package: verbosity
 Title: Utilities for Logging and Verbosity
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Alon", "Alexander", email = "alon008@gmail.com", role = c("aut", "cre"))
 Description: Provides utilities for logging and verbosity.
 License: MIT + file LICENSE

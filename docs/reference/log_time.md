@@ -28,5 +28,5 @@ The result of `expr`.
 ``` r
 log_time("sleep", Sys.sleep(0.1))
 #> [sleep] start
-#> [sleep] done in 0.10s
+#> [sleep] done in 0.11s
 ```

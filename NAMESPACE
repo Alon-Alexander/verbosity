@@ -2,4 +2,5 @@
 
 export(log_filter)
 export(log_time)
+export(section)
 export(title)
