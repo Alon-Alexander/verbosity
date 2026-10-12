@@ -18,7 +18,7 @@ This package is not on CRAN, so install it from GitHub:
 
 ## Usage
 
-[`library`](https://rdrr.io/r/base/library.html)`(`[`verbosity`](https://alon-alexander.github.io/verbosity/)`)`` `` `[`title`](https://alon-alexander.github.io/verbosity/reference/title.md)`(``"Showcase verbosity package"``)`` `` `[`section`](https://alon-alexander.github.io/verbosity/reference/section.md)`(``"load and filter"``, ``{`` `` `[`log_time`](https://alon-alexander.github.io/verbosity/reference/log_time.md)`(``"load data"``, ``{`` `` ``df`` ``<-`` `[`as.data.frame`](https://rdrr.io/r/base/as.data.frame.html)`(`[`matrix`](https://rdrr.io/r/base/matrix.html)`(`[`rnorm`](https://rdrr.io/r/stats/Normal.html)`(``1000`` ``*`` ``200``)``, nrow ``=`` ``1000``, ncol ``=`` ``200``)``)`` `` ``}``)`` `` `` `[`log_filter`](https://alon-alexander.github.io/verbosity/reference/log_filter.md)`(``"good values"``, ``df``, ``{`` `` ``df`` ``<-`` ``df``[`[`rowSums`](https://rdrr.io/r/base/colSums.html)`(``df``)`` ``>`` ``0``]`` `` ``}``)`` ``}``)`
+[`library`](https://rdrr.io/r/base/library.html)`(`[`verbosity`](https://alon-alexander.github.io/verbosity/)`)`` `` `[`title`](https://alon-alexander.github.io/verbosity/reference/title.md)`(``"Showcase verbosity package"``)`` `` `[`section`](https://alon-alexander.github.io/verbosity/reference/section.md)`(``"load and filter"``, ``{`` `` `[`log_time`](https://alon-alexander.github.io/verbosity/reference/log_time.md)`(``"load data"``, ``{`` `` ``df`` ``<-`` `[`as.data.frame`](https://rdrr.io/r/base/as.data.frame.html)`(`[`matrix`](https://rdrr.io/r/base/matrix.html)`(`[`rnorm`](https://rdrr.io/r/stats/Normal.html)`(``1000`` ``*`` ``200``)``, nrow ``=`` ``1000``, ncol ``=`` ``200``)``)`` `` ``}``)`` `` `` `[`cat`](https://rdrr.io/r/base/cat.html)`(``"Just printing some stuff...\n"``)`` `` `` `[`log_filter`](https://alon-alexander.github.io/verbosity/reference/log_filter.md)`(``"good values"``, ``df``, ``{`` `` ``df`` ``<-`` ``df``[`[`rowSums`](https://rdrr.io/r/base/colSums.html)`(``df``)`` ``>`` ``0``]`` `` ``}``)`` ``}``)`
 
 Expected output is something like:
 
@@ -28,6 +28,7 @@ Expected output is something like:
 Start section load and filter
     [load data] start
     [load data] done in 0.01s
+    Just printing some stuff...
     Filter of "good values" finished and took 0.02s
         nrows: 1000 -> 504
 Section load and filter done in 0.03s
